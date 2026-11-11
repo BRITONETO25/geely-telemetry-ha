@@ -1,35 +1,45 @@
-# Geely Telemetry for Home Assistant
+# Geely Telemetry para Home Assistant
 
-A custom Home Assistant integration and companion in-car app for Geely vehicle telemetry. The integration exposes a curated set of useful sensors and a GPS tracker. MQTT and webhook destinations from the app can carry the complete JSON telemetry frame.
+App de telemetria para a central do **Geely EX2 vendido no Brasil**, junto com a integração customizada para Home Assistant. A integração oferece sensores selecionados e uma entidade GPS (`device_tracker`). O app pode publicar quadros JSON completos por MQTT ou webhook.
 
-## Features
+> **Compatibilidade:** o desenvolvimento e a validação foram feitos para o Geely EX2 brasileiro. O protocolo e os sinais podem variar conforme o país, ano, versão de software ou modelo. Portanto, pode funcionar ou não em versões internacionais do EX2 e em outros veículos Geely; esses casos ainda não foram validados.
 
-- Vehicle speed, gear, traction battery, range, trip values, charging values, and connection status.
-- A `device_tracker` GPS entity for the Home Assistant map card.
-- Receive app data over HTTPS through Home Assistant OAuth, or read the vehicle over the local network.
-- The app can continue to publish the full readable VHAL property set to MQTT or webhook destinations.
+## Arquivos
 
-## Install with HACS
+- APK de depuração: [`app/Geely-Telemetry-debug.apk`](app/Geely-Telemetry-debug.apk). Por ser uma compilação de depuração, use para avaliação e testes.
+- Integração Home Assistant: `custom_components/geely_telemetry/`.
 
-1. In HACS, open **Integrations** and choose **Custom repositories** from the menu. (The default catalog listing is being requested; until approval, add the custom repository below.)
-2. Add `https://github.com/BRITONETO25/geely-telemetry-ha` with category **Integration**.
-3. Download **Geely Telemetry** and restart Home Assistant.
-4. Add the integration. Select **Car app over the internet** for remote push or **Local network** for LAN polling.
-5. In the in-car app, select **Home Assistant**, enter your public `https://` Home Assistant URL, and tap **Authenticate**.
-6. Approve access on the Home Assistant sign-in page and return to the in-car app.
+## Recursos
 
-For the map, add a **Map** dashboard card and select the integration's `device_tracker` entity.
+- Velocidade, marcha, bateria de tração, autonomia, dados da viagem, carregamento e conexão.
+- Entidade `device_tracker` para mostrar a localização do carro em um cartão de mapa.
+- Recepção de dados do app pela internet com autorização OAuth do Home Assistant ou leitura local pela rede.
+- O app pode publicar o quadro VHAL legível completo em MQTT ou webhook.
 
-## Privacy and requirements
+## Instalar a integração pelo HACS
 
-The in-car app needs Android location permission to send GPS coordinates. Telemetry is sent only to the destinations enabled in the app. OAuth tokens are stored encrypted on the head unit. The app reads vehicle signals and location; it does not send vehicle control commands.
+1. No HACS, abra **Integrações** e escolha **Repositórios personalizados** no menu. Enquanto a solicitação de entrada no catálogo padrão estiver pendente, adicione este repositório manualmente.
+2. Adicione `https://github.com/BRITONETO25/geely-telemetry-ha` com a categoria **Integration**.
+3. Baixe **Geely Telemetry** e reinicie o Home Assistant.
+4. Adicione a integração. Selecione **App do carro pela internet** para envio remoto ou **Rede local** para leitura na LAN.
+5. No app instalado na central, selecione **Home Assistant**, informe a URL pública `https://` e toque em **Autenticar**.
+6. Autorize o acesso na página do Home Assistant e retorne ao app.
+7. Para o mapa, adicione um cartão **Mapa** à dashboard e selecione a entidade `device_tracker` da Geely.
 
-The integration currently exposes a small everyday sensor set. The odometer is not available in the current VHAL snapshot on the tested vehicle.
+## Instalar o app na central
 
-## Support
+Baixe o APK acima e instale-o na central do veículo. O APK neste repositório é uma compilação de depuração, não uma versão de produção assinada.
 
-Report bugs and feature requests in the repository's GitHub Issues page.
+## Privacidade e limitações
 
-## License
+O app precisa da permissão de localização do Android para enviar coordenadas GPS. A telemetria vai apenas para os destinos habilitados no app. Os tokens OAuth são armazenados de forma criptografada na central. O app lê sinais do veículo e a localização, sem enviar comandos de controle ao carro.
 
-MIT license.
+A integração expõe um conjunto enxuto de sensores comuns. O hodômetro não estava disponível no snapshot VHAL do veículo usado nos testes.
+
+## Suporte
+
+Abra uma issue neste repositório para reportar problemas ou sugerir recursos.
+
+## Licença
+
+MIT.
