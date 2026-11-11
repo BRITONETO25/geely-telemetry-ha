@@ -39,7 +39,7 @@
   "entity": {
     "binary_sensor": {
       "charging": {"name": "Recarga ativa"},
-      "vhalLive": {"name": "Telemetria VHAL ao vivo"}
+      "vhal_live": {"name": "Telemetria VHAL ao vivo"}
     },
     "device_tracker": {
       "localizacao_do_veiculo": {"name": "Localização do veículo"}
