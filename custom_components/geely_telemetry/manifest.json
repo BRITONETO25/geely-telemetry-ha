@@ -10,8 +10,8 @@
   "config_flow": true,
   "documentation": "https://github.com/BRITONETO25/geely-telemetry-ha#readme",
   "integration_type": "device",
-  "issue_tracker": "https://github.com/BRITONETO25/geely-telemetry-ha/issues",
   "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/BRITONETO25/geely-telemetry-ha/issues",
   "requirements": [],
   "version": "0.3.0"
 }
