@@ -11,7 +11,7 @@ A custom Home Assistant integration and companion in-car app for Geely vehicle t
 
 ## Install with HACS
 
-1. In HACS, open **Integrations** and choose **Custom repositories** from the menu.
+1. In HACS, open **Integrations** and choose **Custom repositories** from the menu. (The default catalog listing is being requested; until approval, add the custom repository below.)
 2. Add `https://github.com/BRITONETO25/geely-telemetry-ha` with category **Integration**.
 3. Download **Geely Telemetry** and restart Home Assistant.
 4. Add the integration. Select **Car app over the internet** for remote push or **Local network** for LAN polling.
