@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar à telemetria do veículo",
+        "description": "Escolha receber os dados do app pela internet ou ler a central na rede local.",
+        "data": {
+          "mode": "Como receber os dados",
+          "host": "Endereço IP",
+          "port": "Porta"
+        }
+      },
+      "local": {
+        "title": "Conexão na rede local",
+        "description": "Informe o endereço e a porta do app na central do carro.",
+        "data": {
+          "host": "Endereço IP",
+          "port": "Porta"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Não foi possível ler a telemetria. Verifique se o carro está ligado à rede e se o serviço está ativo."
+    },
+    "abort": {
+      "already_configured": "Este endpoint ou recebimento já está configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Intervalo de atualização",
+        "data": {
+          "scan_interval": "Intervalo em segundos (30 a 900)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "charging": {"name": "Recarga ativa"},
+      "vhalLive": {"name": "Telemetria VHAL ao vivo"}
+    },
+    "device_tracker": {
+      "localizacao_do_veiculo": {"name": "Localização do veículo"}
+    }
+  }
+}
